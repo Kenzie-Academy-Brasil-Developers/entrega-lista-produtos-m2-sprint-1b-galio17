@@ -57,5 +57,18 @@ function filterProducts () {
     }
 }
 
+function filterBySearch () {
+    const searchInput = document.querySelector('.campoBuscaPorNome');
+
+    if(searchInput.value) {
+        const regexCapture = new RegExp(searchInput.value, 'i');
+        const filteredProducts = produtos.filter((product) => regexCapture.test(product.nome));
+        
+        searchInput.value = '';
+
+        listFoods(filteredProducts);
+    } else listFoods(produtos);
+}
+
 listFoods(produtos);
 addEventListener('click', runOnClick);
