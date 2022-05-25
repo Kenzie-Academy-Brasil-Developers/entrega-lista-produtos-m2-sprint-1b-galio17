@@ -1,4 +1,4 @@
-function listFoods (productsData) {
+function listProducts (productsData) {
     const productList = document.querySelector('ul');
 
     productList.innerHTML = '';    
@@ -66,9 +66,9 @@ function filterBySearch () {
         
         searchInput.value = '';
 
-        listFoods(filteredProducts);
-    } else listFoods(produtos);
+        listProducts(filteredProducts);
+    } else listProducts(produtos);
 }
 
-listFoods(produtos);
+listProducts(produtos);
 addEventListener('click', runOnClick);
