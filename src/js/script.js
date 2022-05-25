@@ -25,7 +25,7 @@ function createProductImage (product) {
     const productImage = document.createElement('img');
 
     productImage.src = product.img;
-    productImage.alt = product.nome;
+    productImage.alt = `Imagem de ${product.nome}`;
 
     return productImage;
 }
