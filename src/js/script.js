@@ -39,10 +39,14 @@ function createProductInfo (tag, innerText) {
 }
 
 function runOnClick (event) {
-    if (containsClass('estiloGeralBotoes')) {
+    if (verifyClass('estiloGeralBotoes')) {
         filterSection();
         calculatePrice();
     }
+}
+
+function verifyClass(className) {
+    return event.target.classList.contains(className);
 }
 
 listFoods(produtos);
