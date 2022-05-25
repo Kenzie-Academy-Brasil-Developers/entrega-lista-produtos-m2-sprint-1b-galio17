@@ -40,13 +40,21 @@ function createProductInfo (tag, innerText) {
 
 function runOnClick (event) {
     if (verifyClass('estiloGeralBotoes')) {
-        filterSection();
+        filterProducts();
         calculatePrice();
     }
 }
 
 function verifyClass(className) {
     return event.target.classList.contains(className);
+}
+
+function filterProducts () {
+    if(verifyClass('estiloGeralBotoes--botaoBuscaPorNome')){
+        filterBySearch();
+    } else {
+        filterBySection();
+    }
 }
 
 listFoods(produtos);
