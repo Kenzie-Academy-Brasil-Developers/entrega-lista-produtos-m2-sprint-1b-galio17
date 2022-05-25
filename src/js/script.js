@@ -38,4 +38,12 @@ function createProductInfo (tag, innerText) {
     return productInfo;
 }
 
+function runOnClick (event) {
+    if (containsClass('estiloGeralBotoes')) {
+        filterSection();
+        calculatePrice();
+    }
+}
+
 listFoods(produtos);
+addEventListener('click', runOnClick);
