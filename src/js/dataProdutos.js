@@ -18,7 +18,7 @@ const produtos = [
         preco: 2,
         secao: 'Hortifruti',
         categoria: 'fruta',
-        img: './src/img/maça.png'
+        img: './src/img/maca.png'
     },
     {
         nome: 'Pão',
