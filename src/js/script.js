@@ -30,4 +30,12 @@ function createProductImage (product) {
     return productImage;
 }
 
+function createProductInfo (tag, innerText) {
+    const productInfo = document.createElement(tag);
+
+    productInfo.innerText = innerText;
+
+    return productInfo;
+}
+
 listFoods(produtos);
