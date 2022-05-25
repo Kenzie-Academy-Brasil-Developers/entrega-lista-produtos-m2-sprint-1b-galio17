@@ -21,5 +21,13 @@ function createProductCard (product) {
     return productCard;
 }
 
+function createProductImage (product) {
+    const productImage = document.createElement('img');
+
+    productImage.src = product.img;
+    productImage.alt = product.nome;
+
+    return productImage;
+}
 
 listFoods(produtos);
