@@ -70,5 +70,16 @@ function filterBySearch () {
     } else listProducts(produtos);
 }
 
+function filterBySection () {
+    const sectionProduct = event.target.innerText.replace('Mostrar ', '');
+    
+    if(sectionProduct === 'Todos') listProducts(produtos);
+    else {
+        const filteredProducts = produtos.filter((product) => product.secao === sectionProduct);
+    
+        listProducts(filteredProducts);
+    }
+}
+
 listProducts(produtos);
 addEventListener('click', runOnClick);
