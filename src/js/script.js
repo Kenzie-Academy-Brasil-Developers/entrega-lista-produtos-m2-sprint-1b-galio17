@@ -60,7 +60,7 @@ function filterProducts () {
 function filterBySearch () {
     const searchInput = document.querySelector('.campoBuscaPorNome');
 
-    if(searchInput.value) {
+    if (searchInput.value) {
         const regexCapture = new RegExp(searchInput.value, 'i');
         const filteredProducts = produtos.filter((product) => regexCapture.test(product.nome));
         
