@@ -41,7 +41,6 @@ function createProductInfo (tag, innerText) {
 function runOnClick (event) {
     if (verifyClass('estiloGeralBotoes')) {
         filterProducts();
-        calculatePrice();
     }
 }
 
@@ -67,6 +66,7 @@ function filterBySearch () {
         searchInput.value = '';
 
         listProducts(filteredProducts);
+        calculatePrice(filteredProducts);
     } else listProducts(produtos);
 }
 
@@ -78,8 +78,15 @@ function filterBySection () {
         const filteredProducts = produtos.filter((product) => product.secao === sectionProduct);
     
         listProducts(filteredProducts);
+        calculatePrice(filteredProducts);
     }
 }
 
+function calculatePrice (productsData) {
+    const totalPrice = document.getElementById('precoTotal');
+    totalPrice.innerText = productsData.reduce((accPrice, product) => accPrice + product.preco, 0).toFixed(2);
+}
+
 listProducts(produtos);
+calculatePrice(produtos);
 addEventListener('click', runOnClick);
