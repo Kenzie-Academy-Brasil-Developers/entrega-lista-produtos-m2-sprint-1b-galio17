@@ -111,7 +111,7 @@ header {
 
 .containerListaProdutos {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -119,6 +119,7 @@ header {
     padding-top: 50px;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
