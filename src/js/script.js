@@ -49,40 +49,32 @@ function verifyClass(className) {
 }
 
 function filterProducts () {
+    let filteredProducts = [];
     if(verifyClass('estiloGeralBotoes--botaoBuscaPorNome')){
-        filterBySearch();
-    } else {
-        filterBySection();
+        filteredProducts = createSearchProducts();
+    } else if(verifyClass('estiloGeralBotoes--mostrarTodos')){
+        filteredProducts = createSectionProducts('Todos');
     }
+
+    listProducts(filteredProducts);
+    calculatePrice(filteredProducts);
 }
 
-function filterBySearch () {
+function createSearchProducts () {
     const searchInput = document.querySelector('.campoBuscaPorNome');
 
     if (searchInput.value) {
-        const regexCapture = new RegExp(searchInput.value, 'i');
-        const filteredProducts = produtos.filter((product) => regexCapture.test(product.nome));
+        const regexCapture = new RegExp(searchInput.value.trim(), 'i');
         
         searchInput.value = '';
-
-        listProducts(filteredProducts);
-        calculatePrice(filteredProducts);
-    } else listProducts(produtos);
+        
+        return produtos.filter((product) => regexCapture.test(product.nome));
+    } else return produtos;
 }
 
-function filterBySection () {
-    const sectionProduct = event.target.innerText.replace('Mostrar ', '');
-    
-    if(sectionProduct === 'Todos') {
-        listProducts(produtos);
-        calculatePrice(produtos);
-    }
-    else {
-        const filteredProducts = produtos.filter((product) => product.secao === sectionProduct);
-    
-        listProducts(filteredProducts);
-        calculatePrice(filteredProducts);
-    }
+function createSectionProducts (sectionOfProducts) {
+    if(sectionOfProducts !== 'Todos') return produtos.filter((product) => product.secao === sectionOfProducts);
+    else return produtos;
 }
 
 function calculatePrice (productsData) {
