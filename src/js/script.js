@@ -49,11 +49,19 @@ function verifyClass(className) {
 }
 
 function filterProducts () {
+    const currentFilter = document.querySelector('.curFilter');
     let filteredProducts = [];
-    if(verifyClass('estiloGeralBotoes--botaoBuscaPorNome')){
-        filteredProducts = createSearchProducts();
-    } else if(verifyClass('estiloGeralBotoes--mostrarTodos')){
-        filteredProducts = createSectionProducts('Todos');
+
+    if(currentFilter) currentFilter.classList.remove('curFilter');
+
+    if(verifyClass('estiloGeralBotoes--botaoBuscaPorNome')) filteredProducts = createSearchProducts();
+    else {
+        event.target.classList.add('curFilter');
+
+        if(verifyClass('estiloGeralBotoes--mostrarTodos')) filteredProducts = createSectionProducts('Todos');
+        else if(verifyClass('estiloGeralBotoes--filtrarHortifruti')) filteredProducts = createSectionProducts('Hortifruti');
+        else if(verifyClass('estiloGeralBotoes--filtrarPanificadora')) filteredProducts = createSectionProducts('Panificadora');
+        else if(verifyClass('estiloGeralBotoes--filtrarLaticinio')) filteredProducts = createSectionProducts('Laticínio');
     }
 
     listProducts(filteredProducts);
