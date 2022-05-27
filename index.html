@@ -12,23 +12,35 @@
 
     <!-- CABEÇALHO -->
     <header>
+        <h1 class="logo">Shop Now</h1>
+    </header>
+    
+    <main>
         <div id="filters" class="filtersContainer">
             
-            <button class="estiloGeralBotoes estiloGeralBotoes--mostrarTodos">Mostrar Todos</button>
-            <button class="estiloGeralBotoes estiloGeralBotoes--filtrarHortifruti">Mostrar Hortifruti</button>
+            <div class="filterSectionContainer">
+                <button class="estiloGeralBotoes estiloGeralBotoes--mostrarTodos">Todos Produtos</button>
+                <button class="estiloGeralBotoes estiloGeralBotoes--filtrarHortifruti">Hortifruti</button>
+                <button class="estiloGeralBotoes estiloGeralBotoes--filtrarPanificadora">Panificadora</button>
+                <button class="estiloGeralBotoes estiloGeralBotoes--filtrarLaticionio">Laticínio</button>
+            </div>
 
             <div class="containerBuscaPorNome">
                 
                 <input type="text" placeholder="Nome do produto" class="campoBuscaPorNome">
-                <button class="estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome">Buscar</button>
+                <button class="estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome"></button>
 
             </div>
         </div>
-    </header>
-    
-    <main>
-        <div class="containerListaProdutos" id="listProdutos">
-            <ul>
+        <div class="containerPrecoTotal">
+            <div>
+                <img src="src/img/alert-circle.png" alt="Círculo de Alerta">
+                <p>Valor total dos produtos da sessão selecionada</p>
+            </div>
+            <p id="precoTotal"></p>
+        </div>
+        <div class="containerListaProdutos">
+            <ul id="listProdutos">
             <!-- Utilize esse item html como template para a construção da lista de produtos -->
 
             <!-- Você pode remover esses comentários depois que fizer a construção pelo DOM -->
@@ -42,10 +54,6 @@
                 </li>
             -->
             </ul>
-        </div>
-
-        <div class="containerPrecoTotal">
-            <p>Preço total: R$ <span id="precoTotal"></span></p>
         </div>
     </main>
 
