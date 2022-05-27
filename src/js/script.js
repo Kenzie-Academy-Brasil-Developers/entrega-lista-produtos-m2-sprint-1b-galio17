@@ -61,7 +61,7 @@ function filterProducts () {
         if(verifyClass('estiloGeralBotoes--mostrarTodos')) filteredProducts = createSectionProducts('Todos');
         else if(verifyClass('estiloGeralBotoes--filtrarHortifruti')) filteredProducts = createSectionProducts('Hortifruti');
         else if(verifyClass('estiloGeralBotoes--filtrarPanificadora')) filteredProducts = createSectionProducts('Panificadora');
-        else if(verifyClass('estiloGeralBotoes--filtrarLaticinio')) filteredProducts = createSectionProducts('Laticínio');
+        else if(verifyClass('estiloGeralBotoes--filtrarLaticionio')) filteredProducts = createSectionProducts('Laticínio');
     }
 
     listProducts(filteredProducts);
