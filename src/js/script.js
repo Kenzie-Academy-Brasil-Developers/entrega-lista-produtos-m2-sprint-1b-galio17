@@ -68,7 +68,7 @@ function createSearchProducts () {
         
         searchInput.value = '';
         
-        return produtos.filter((product) => regexCapture.test(product));
+        return produtos.filter((product) => regexCapture.test(product.nome));
     } else return produtos;
 }
 
