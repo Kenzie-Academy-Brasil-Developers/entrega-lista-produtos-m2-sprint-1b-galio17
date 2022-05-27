@@ -52,7 +52,7 @@ function filterProducts () {
     if(verifyClass('estiloGeralBotoes--botaoBuscaPorNome')){
         filterBySearch();
     } else {
-        filterBySection();
+        createSectionProducts();
     }
 }
 
@@ -70,19 +70,9 @@ function filterBySearch () {
     } else listProducts(produtos);
 }
 
-function filterBySection () {
-    const sectionProduct = event.target.innerText.replace('Mostrar ', '');
-    
-    if(sectionProduct === 'Todos') {
-        listProducts(produtos);
-        calculatePrice(produtos);
-    }
-    else {
-        const filteredProducts = produtos.filter((product) => product.secao === sectionProduct);
-    
-        listProducts(filteredProducts);
-        calculatePrice(filteredProducts);
-    }
+function createSectionProducts (sectionOfProducts) {
+    if(sectionOfProducts !== 'Todos') return produtos.filter((product) => product.secao === sectionOfProducts);
+    else return produtos;
 }
 
 function calculatePrice (productsData) {
