@@ -50,24 +50,22 @@ function verifyClass(className) {
 
 function filterProducts () {
     if(verifyClass('estiloGeralBotoes--botaoBuscaPorNome')){
-        filterBySearch();
+        createSearchProducts();
     } else {
         createSectionProducts();
     }
 }
 
-function filterBySearch () {
+function createSearchProducts () {
     const searchInput = document.querySelector('.campoBuscaPorNome');
 
     if (searchInput.value) {
-        const regexCapture = new RegExp(searchInput.value, 'i');
-        const filteredProducts = produtos.filter((product) => regexCapture.test(product.nome));
+        const regexCapture = new RegExp(searchInput.value.trim(), 'i');
         
         searchInput.value = '';
-
-        listProducts(filteredProducts);
-        calculatePrice(filteredProducts);
-    } else listProducts(produtos);
+        
+        return produtos.filter((product) => regexCapture.test(product));
+    } else return produtos;
 }
 
 function createSectionProducts (sectionOfProducts) {
