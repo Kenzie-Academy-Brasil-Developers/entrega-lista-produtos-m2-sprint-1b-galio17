@@ -49,11 +49,15 @@ function verifyClass(className) {
 }
 
 function filterProducts () {
+    let filteredProducts = [];
     if(verifyClass('estiloGeralBotoes--botaoBuscaPorNome')){
-        createSearchProducts();
-    } else {
-        createSectionProducts();
+        filteredProducts = createSearchProducts();
+    } else if(verifyClass('estiloGeralBotoes--mostrarTodos')){
+        filteredProducts = createSectionProducts('Todos');
     }
+
+    listProducts(filteredProducts);
+    calculatePrice(filteredProducts);
 }
 
 function createSearchProducts () {
