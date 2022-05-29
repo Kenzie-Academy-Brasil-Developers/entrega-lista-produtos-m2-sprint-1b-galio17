@@ -13,51 +13,83 @@
     <!-- CABEÇALHO -->
     <header>
         <h1 class="logo">Shop Now</h1>
-    </header>
-    
-    <main>
         <div id="filters" class="filtersContainer">
             
             <div class="filterSectionContainer">
-                <button class="estiloGeralBotoes estiloGeralBotoes--mostrarTodos curFilter">Todos Produtos</button>
-                <button class="estiloGeralBotoes estiloGeralBotoes--filtrarHortifruti">Hortifruti</button>
-                <button class="estiloGeralBotoes estiloGeralBotoes--filtrarPanificadora">Panificadora</button>
-                <button class="estiloGeralBotoes estiloGeralBotoes--filtrarLaticionio">Laticínio</button>
+                <button class="buttons buttons--showAll curFilter">Todos Produtos</button>
+                <button class="buttons buttons--filterVegetable">Hortifruti</button>
+                <button class="buttons buttons--filterBakery">Panificadora</button>
+                <button class="buttons buttons--filterDairy">Laticínio</button>
             </div>
 
-            <div class="containerBuscaPorNome">
+            <div class="filterSearchContainer">
                 
-                <input type="text" placeholder="Nome do produto" class="campoBuscaPorNome">
-                <button class="estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome"></button>
+                <input type="text" placeholder="Nome do produto" class="fieldSearch">
+                <button class="buttons buttons--search"></button>
 
             </div>
         </div>
-        <div class="containerPrecoTotal">
-            <div>
-                <img src="src/img/alert-circle.png" alt="Círculo de Alerta">
-                <p>Valor total dos produtos da sessão selecionada</p>
-            </div>
-            <p id="precoTotal"></p>
-        </div>
-        <div class="containerListaProdutos">
-            <ul id="listProdutos">
-            <!-- Utilize esse item html como template para a construção da lista de produtos -->
+    </header>
+    
+    <main>
+        <div class="productsListContainer">
+            <ul id="productContainer">
+                <li class="productCard">
+                    <img src="./src/img/maca.png" alt="Imagem maçã" class="productCard__image">
+                    
+                    <div class="productCard__info">
+                        <div class="product__importantInfo">
+                            <h3 class="product__title">Maçã</h3>
+                            <span class="product__section">Hortifruti</span>
+                            <p class="product__price">R$ 2.00</p>
+                        </div>
 
-            <!-- Você pode remover esses comentários depois que fizer a construção pelo DOM -->
-
-            <!--
-                <li>
-                    <img src="./src/img/maça.png" alt="Imagem maçã">
-                    <h3>Maçã</h3>
-                    <p>R$02.00</p>
-                    <span>Seção - Hortifruti</span>
+                        <ul id="nutrientsContainer">
+                            <li class="nutrientsContainer__nutrient">Potássio</li>
+                            <li class="nutrientsContainer__nutrient">Vitamina A</li>
+                            <li class="nutrientsContainer__nutrient">Vitamina E</li>
+                            <li class="nutrientsContainer__nutrient">Vitamina C</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="buttons buttons--addCart"></button>
                 </li>
-            -->
             </ul>
         </div>
-    </main>
+        <div class="cartContainer">
+            <img src="" alt="" class="cartContainer__cartTitleIcon">
+            
+            <h2 class="cartContainer__cartTitle">Carrinho</h2>
+            
+            <div class="cartContainer__cartInfo">
+                <ul id="cartProductsContainer">
+                    <li class="productCard">
+                        <img src="./src/img/maca.png" alt="Imagem maçã" class="productCard__image">
+                        
+                        <div class="productCard__info">
+                            <div class="product__importantInfo">
+                                <h3 class="product__title">Maçã</h3>
+                                <span class="product__section">Hortifruti</span>
+                                <p class="product__price">R$ 2.00</p>
+                            </div>
+                        </div>
 
-    <script src="src/js/dataProdutos.js"></script>
-    <script src="src/js/script.js"></script>
+                        <button class="buttons buttons--removeCart"></button>
+                    </li>
+                </ul>   
+                
+                <div class="cartContainer__cartInfo__cartProductsInfo">
+                    <p class="cartContainer__cartInfo__cartProductsInfo__amount">Quantidade<span id="totalAmount">1</span></p>
+                    
+                    <p class="cartContainer__cartInfo__cartProductsInfo__price">Total<span id="totalPrice">2.00</span></p>
+                </div>
+
+                <div class="cartContainer__cartInfo__noProducts">
+                    <img src="" alt="">
+                    <h4>Por enquanto não temos produtos no carrinho</h4>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
