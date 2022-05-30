@@ -110,13 +110,13 @@ body {
     transform: scale(1.1);
 }
 
-.product__info {
+.product__details {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-.product__importantInfo, .nutrientsContainer {
+.product__info, .nutrientsContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

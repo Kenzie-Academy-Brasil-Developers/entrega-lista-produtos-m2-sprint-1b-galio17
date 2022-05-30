@@ -35,64 +35,60 @@
     </header>
     
     <main>
-        <div class="productsListContainer">
+        <section class="productsListContainer">
             <ul id="productContainer">
-                <li class="productCard">
-                    <img src="./src/img/maca.png" alt="Imagem maçã" class="productCard__image">
-                    
-                    <div class="productCard__info">
-                        <div class="product__importantInfo">
+                <li class="product">
+                    <img src="./src/img/maca.png" alt="Imagem maçã" class="product__image">
+                    <section class="product__details">
+                        <div class="product__info">
                             <h3 class="product__title">Maçã</h3>
                             <span class="product__section">Hortifruti</span>
+                            <ol id="nutrientsContainer">
+                                <li class="nutrientsContainer__nutrient">Potássio</li>
+                                <li class="nutrientsContainer__nutrient">Vitamina A</li>
+                                <li class="nutrientsContainer__nutrient">Vitamina E</li>
+                                <li class="nutrientsContainer__nutrient">Vitamina C</li>
+                            </ol>
                             <p class="product__price">R$ 2.00</p>
                         </div>
-
-                        <ul id="nutrientsContainer">
-                            <li class="nutrientsContainer__nutrient">Potássio</li>
-                            <li class="nutrientsContainer__nutrient">Vitamina A</li>
-                            <li class="nutrientsContainer__nutrient">Vitamina E</li>
-                            <li class="nutrientsContainer__nutrient">Vitamina C</li>
-                        </ul>
-                    </div>
-                    
-                    <button class="buttons buttons--addCart"></button>
+                        <button class="buttons buttons--addCart"></button>
+                    </section>
                 </li>
             </ul>
-        </div>
-        <div class="cartContainer">
+        </section>
+        <section class="cartContainer">
             <img src="" alt="" class="cartContainer__cartTitleIcon">
             
             <h2 class="cartContainer__cartTitle">Carrinho</h2>
             
-            <div class="cartContainer__cartInfo">
+            <section class="cartContainer__info">
                 <ul id="cartProductsContainer">
-                    <li class="productCard">
-                        <img src="./src/img/maca.png" alt="Imagem maçã" class="productCard__image">
+                    <li class="product">
+                        <img src="./src/img/maca.png" alt="Imagem maçã" class="product__image">
                         
-                        <div class="productCard__info">
-                            <div class="product__importantInfo">
+                        <section class="product__details">
+                            <div class="product__info">
                                 <h3 class="product__title">Maçã</h3>
                                 <span class="product__section">Hortifruti</span>
                                 <p class="product__price">R$ 2.00</p>
                             </div>
-                        </div>
-
-                        <button class="buttons buttons--removeCart"></button>
+                            <button class="buttons buttons--removeCart"></button>
+                        </section>
                     </li>
                 </ul>   
                 
-                <div class="cartContainer__cartInfo__cartProductsInfo">
-                    <p class="cartContainer__cartInfo__cartProductsInfo__amount">Quantidade<span id="totalAmount">1</span></p>
+                <section class="cartContainer__info__cartProductsInfo">
+                    <p class="cartContainer__info__cartProductsInfo__amount">Quantidade<span id="totalAmount">1</span></p>
                     
-                    <p class="cartContainer__cartInfo__cartProductsInfo__price">Total<span id="totalPrice">2.00</span></p>
-                </div>
+                    <p class="cartContainer__info__cartProductsInfo__price">Total<span id="totalPrice">2.00</span></p>
+                </section>
 
-                <div class="cartContainer__cartInfo__noProducts">
+                <section class="cartContainer__info__noProducts">
                     <img src="" alt="">
                     <h4>Por enquanto não temos produtos no carrinho</h4>
-                </div>
-            </div>
-        </div>
+                </section>
+            </section>
+        </section>
     </main>
 </body>
 </html>
