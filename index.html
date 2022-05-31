@@ -16,7 +16,7 @@
     <!-- CABEÇALHO -->
     <header>
         <h1 class="logo">Shop Now</h1>
-        <div id="filters" class="filtersContainer">
+        <div class="filtersContainer">
             
             <div class="filterSectionContainer">
                 <button class="buttons buttons--showAll curFilter">Todos Produtos</button>
@@ -43,49 +43,76 @@
                         <div class="product__info">
                             <h3 class="product__title">Maçã</h3>
                             <span class="product__section">Hortifruti</span>
-                            <ol id="nutrientsContainer">
+                            <ol class="nutrientsContainer">
                                 <li class="nutrientsContainer__nutrient">Potássio</li>
                                 <li class="nutrientsContainer__nutrient">Vitamina A</li>
                                 <li class="nutrientsContainer__nutrient">Vitamina E</li>
                                 <li class="nutrientsContainer__nutrient">Vitamina C</li>
                             </ol>
-                            <p class="product__price">R$ 2.00</p>
+                            <p class="product__price">2.00</p>
                         </div>
-                        <button class="buttons buttons--addCart"></button>
+                        <button class="buttons buttons--addCart">Comprar</button>
+                    </section>
+                </li>
+                <li class="product">
+                    <img src="./src/img/maca.png" alt="Imagem maçã" class="product__image">
+                    <section class="product__details">
+                        <div class="product__info">
+                            <h3 class="product__title">Maçã</h3>
+                            <span class="product__section">Hortifruti</span>
+                            <ol class="nutrientsContainer">
+                                <li class="nutrientsContainer__nutrient">Potássio</li>
+                                <li class="nutrientsContainer__nutrient">Vitamina A</li>
+                                <li class="nutrientsContainer__nutrient">Vitamina E</li>
+                                <li class="nutrientsContainer__nutrient">Vitamina C</li>
+                            </ol>
+                            <p class="product__price">2.00</p>
+                        </div>
+                        <button class="buttons buttons--addCart">Comprar</button>
                     </section>
                 </li>
             </ul>
         </section>
         <section class="cartContainer">
-            <img src="" alt="" class="cartContainer__cartTitleIcon">
-            
-            <h2 class="cartContainer__cartTitle">Carrinho</h2>
+            <h2 class="cartContainer__title">Carrinho</h2>
             
             <section class="cartContainer__info">
                 <ul id="cartProductsContainer">
-                    <li class="product">
-                        <img src="./src/img/maca.png" alt="Imagem maçã" class="product__image">
+                    <li class="product product--cart">
+                        <img src="./src/img/maca.png" alt="Imagem maçã" class="product__image product__image--cart">
                         
-                        <section class="product__details">
-                            <div class="product__info">
-                                <h3 class="product__title">Maçã</h3>
-                                <span class="product__section">Hortifruti</span>
-                                <p class="product__price">R$ 2.00</p>
+                        <section class="product__details product__details--cart">
+                            <div class="product__info product__info--cart">
+                                <h3 class="product__title product__title--cart">Maçã</h3>
+                                <span class="product__section product__section--cart">Hortifruti</span>
+                                <p class="product__price product__price--cart">2.00</p>
+                            </div>
+                            <button class="buttons buttons--removeCart"></button>
+                        </section>
+                    </li>
+                    <li class="product product--cart">
+                        <img src="./src/img/maca.png" alt="Imagem maçã" class="product__image product__image--cart">
+                        
+                        <section class="product__details product__details--cart">
+                            <div class="product__info product__info--cart">
+                                <h3 class="product__title product__title--cart">Maçã</h3>
+                                <span class="product__section product__section--cart">Hortifruti</span>
+                                <p class="product__price product__price--cart">2.00</p>
                             </div>
                             <button class="buttons buttons--removeCart"></button>
                         </section>
                     </li>
                 </ul>   
                 
-                <section class="cartContainer__info__cartProductsInfo">
-                    <p class="cartContainer__info__cartProductsInfo__amount">Quantidade<span id="totalAmount">1</span></p>
+                <section class="cartContainer__info__productsInfo">
+                    <p class="cartContainer__info__productsInfo__amount">Quantidade<span id="totalAmount">1</span></p>
                     
-                    <p class="cartContainer__info__cartProductsInfo__price">Total<span id="totalPrice">2.00</span></p>
+                    <p class="cartContainer__info__productsInfo__price">Total<span id="totalPrice">2.00</span></p>
                 </section>
 
                 <section class="cartContainer__info__noProducts">
-                    <img src="" alt="">
-                    <h4>Por enquanto não temos produtos no carrinho</h4>
+                    <img src="src/img/shopping-bag.png" alt="Ícone de Sacola de compras">
+                    <p>Por enquanto não temos produtos no carrinho</p>
                 </section>
             </section>
         </section>
