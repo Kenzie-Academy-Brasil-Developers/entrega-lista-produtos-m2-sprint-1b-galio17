@@ -10,14 +10,20 @@ function listProducts (productsData, tagId, isCart) {
     }); 
 }
 
-function createProductCard (product) {
+function createProductCard (product, isCart) {
     const productCard = document.createElement('li');
     const productImage = createProductImage(product);
-    const productTitle = createProductInfo('h3', product.nome);
-    const productPrice = createProductInfo('p', `R$ ${product.preco.toFixed(2)}`);
-    const productSection = createProductInfo('span', `${product.secao}`);
+    const productDetails = createProductDetails(product, isCart);
 
-    productCard.append(productImage, productTitle, productPrice, productSection);
+    productCard.classList.add('product');
+    productCard.id = product.id;
+
+    if(isCart) {
+        productCard.classList.add('product--cart');
+        productImage.classList.add('product__image--cart');
+    }
+
+    productCard.append(productImage, productDetails);
 
     return productCard;
 }
