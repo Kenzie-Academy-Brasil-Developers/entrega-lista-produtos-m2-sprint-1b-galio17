@@ -59,10 +59,31 @@ function createProductDetails(product, isCart) {
     return productDetails;
 }
 
-function runOnClick (event) {
-    if (verifyClass('estiloGeralBotoes')) {
-        filterProducts();
+function createProductInfo(product, isCart) {
+    const productInfo = document.createElement('div');
+    const productTitle = createProductElement('h3', product.nome, 'product__title');
+    const productSection = createProductElement('span', product.secao, 'product__section');
+    const productPrice = createProductElement('span', (product.promocao) ? product.precoPromocao : product.preco, 'product__price');
+
+    productInfo.classList.add('product__info');
+    
+    if(isCart) {
+        productInfo.classList.add('product__info--cart');
+        productTitle.classList.add('product__title--cart');
+        productSection.classList.add('product__section--cart');
+        productPrice.classList.add('product__price--cart');
+        
+        productInfo.append(productTitle, productSection, productPrice);
+    } else {
+        const productNutrients = createProductNutrients(product.componentes);
+        
+        
+        productInfo.append(productTitle, productSection, productNutrients, productPrice);
     }
+
+    return productInfo;
+}
+
 }
 
 function verifyClass(className) {
