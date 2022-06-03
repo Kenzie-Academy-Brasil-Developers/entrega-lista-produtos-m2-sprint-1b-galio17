@@ -162,9 +162,11 @@ function createSectionProducts (sectionOfProducts) {
     else return produtos;
 }
 
-function calculatePrice (productsData) {
-    const totalPrice = document.getElementById('precoTotal');
-    totalPrice.innerText = productsData.reduce((accPrice, product) => accPrice + product.preco, 0).toFixed(2);
+function createCartProducts(cartProductsData, classButtons) {
+    const product = produtos.find(({ id }) => id === Number(event.composedPath()[2].id))
+
+    if(verifyClass(`${classButtons}--addCart`)) addProductToCart(cartProductsData, product);
+    else if(verifyClass(`${classButtons}--removeCart`)) removeProductFromCart(cartProductsData, product);
 }
 
 listProducts(produtos);
