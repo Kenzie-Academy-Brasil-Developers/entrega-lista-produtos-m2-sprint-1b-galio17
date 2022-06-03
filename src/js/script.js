@@ -173,6 +173,12 @@ function addProductToCart(cartProductsData, { id, nome, preco, secao, img, promo
     cartProductsData.push({ id, nome, preco, secao, img, promocao, precoPromocao })
 }
 
+function removeProductFromCart(cartProductsData, { id: idToRemove }) {
+    const productIndex = cartProductsData.findIndex(({ id }) => id === idToRemove);
+
+    cartProductsData.splice(productIndex, 1);
+}
+
 function callFunctions() {
     const cartProducts = [];
     
