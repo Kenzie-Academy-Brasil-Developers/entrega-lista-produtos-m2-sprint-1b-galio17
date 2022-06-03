@@ -190,6 +190,17 @@ function loadCart(cartProductsData) {
     listProducts(cartProductsData, 'cartProductsContainer', true);
 }
 
+function createCartInfo(cartProductsData) {
+    const productsAmount = document.getElementById('totalAmount');
+    const productsPrice = document.getElementById('totalPrice');
+
+    productsAmount.innerText = cartProductsData.length.toFixed(2);
+    productsPrice.innerText = cartProductsData.reduce((totalPrice, { promocao, preco, precoPromocao }) => {
+        if(promocao) return totalPrice + Number(precoPromocao);
+        return totalPrice + Number(preco);
+    }, 0).toFixed(2);
+}
+
 function callFunctions() {
     const cartProducts = [];
     
