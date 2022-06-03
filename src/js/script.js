@@ -107,6 +107,18 @@ function createProductNutrients(nutrients) {
     return productNutrients;
 }
 
+function runOnClick(cartProductsData) {
+    addEventListener('click', (event) => {
+        const classButtons = 'buttons'
+        if (verifyClass(classButtons)) {
+            if(verifyClass(`${classButtons}--cart`)) createCartProducts(cartProductsData, classButtons);
+            else filterProducts(classButtons);
+    
+            loadCart(cartProductsData);
+        }
+    });
+}
+
 function verifyClass(className) {
     return event.target.classList.contains(className);
 }
