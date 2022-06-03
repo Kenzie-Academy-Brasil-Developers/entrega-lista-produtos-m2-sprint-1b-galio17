@@ -1,64 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/css/reset.css">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <script defer src="src/js/dataProdutos.js"></script>
-    <script defer src="src/js/script.js"></script>
-    <title>Lista de Produtos</title>
-</head>
-<body>
-    <header>
-        <h1 class="logo">Shop Now</h1>
-        <div class="filtersContainer">
-            
-            <div class="filterSectionContainer">
-                <button class="buttons buttons--showAll curFilter">Todos Produtos</button>
-                <button class="buttons buttons--filterVegetable">Hortifruti</button>
-                <button class="buttons buttons--filterBakery">Panificadora</button>
-                <button class="buttons buttons--filterDairy">Laticínio</button>
-            </div>
-
-            <div class="filterSearchContainer">
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./src/css/reset.css">
+        <link rel="stylesheet" href="./src/css/style.css">
+        <script defer src="src/js/dataProdutos.js"></script>
+        <script defer src="src/js/script.js"></script>
+        <title>Lista de Produtos</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="logo">Shop Now</h1>
+            <div class="filtersContainer">
                 
-                <input type="text" placeholder="Nome do produto" class="fieldSearch">
-                <button class="buttons buttons--search"></button>
+                <div class="filterSectionContainer">
+                    <button class="buttons buttons--showAll curFilter">Todos Produtos</button>
+                    <button class="buttons buttons--filterVegetable">Hortifruti</button>
+                    <button class="buttons buttons--filterBakery">Panificadora</button>
+                    <button class="buttons buttons--filterDairy">Laticínio</button>
+                </div>
 
-            </div>
-        </div>
-    </header>
-    
-    <main>
-        <section class="productsListContainer">
-            <ul id="productContainer">
-            </ul>
-        </section>
-        <section class="cartContainer">
-            <h2 class="cartContainer__title">Carrinho</h2>
-            
-            <section class="cartContainer__info">
-                
-                <section class="cartContainer__info__productsInfo close ">
-                    <p class="cartContainer__info__productsInfo__amount">Quantidade<span id="totalAmount">1</span></p>
+                <div class="filterSearchContainer">
                     
-                    <p class="cartContainer__info__productsInfo__price">Total<span id="totalPrice">2.00</span></p>
-                </section>
+                    <input type="text" placeholder="Nome do produto" class="fieldSearch">
+                    <button class="buttons buttons--search"></button>
 
-                <ul id="cartProductsContainer">
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <section class="productsListContainer">
+                <ul id="productContainer">
                 </ul>
+            </section>
+            <section class="cartContainer">
+                <h2 class="cartContainer__title">Carrinho</h2>
+                
+                <section class="cartContainer__info">
+                    
+                    <section class="cartContainer__info__productsInfo close ">
+                        <p class="cartContainer__info__productsInfo__amount">Quantidade<span id="totalAmount">1</span></p>
+                        
+                        <p class="cartContainer__info__productsInfo__price">Total<span id="totalPrice">2.00</span></p>
+                    </section>
 
-                <section class="cartContainer__info__noProducts">
-                    <img src="src/img/shopping-bag.png" alt="Ícone de Sacola de compras">
-                    <p>Por enquanto não temos produtos no carrinho</p>
+                    <ul id="cartProductsContainer">
+                    </ul>
+
+                    <section class="cartContainer__info__noProducts">
+                        <img src="src/img/shopping-bag.png" alt="Ícone de Sacola de compras">
+                        <p>Por enquanto não temos produtos no carrinho</p>
+                    </section>
                 </section>
             </section>
-        </section>
-    </main>
-</body>
+        </main>
+    </body>
 </html>
