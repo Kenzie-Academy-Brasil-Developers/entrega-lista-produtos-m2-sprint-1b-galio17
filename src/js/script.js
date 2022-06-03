@@ -144,14 +144,16 @@ function filterProducts (classButtons) {
 }
 
 function createSearchProducts () {
-    const searchInput = document.querySelector('.campoBuscaPorNome');
+    const searchInput = document.querySelector('.fieldSearch');
 
     if (searchInput.value) {
-        const regexCapture = new RegExp(searchInput.value.trim(), 'i');
-        
+        const search = searchInput.value.toLowerCase();
+
         searchInput.value = '';
         
-        return produtos.filter((product) => regexCapture.test(product.nome));
+        return produtos.filter((product) => product.nome.toLowerCase().includes(search)
+                                            || product.secao.toLowerCase().includes(search)
+                                            || product.categoria.toLowerCase().includes(search));
     } else return produtos;
 }
 
