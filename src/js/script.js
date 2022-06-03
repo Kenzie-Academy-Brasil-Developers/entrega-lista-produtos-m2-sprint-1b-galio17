@@ -28,11 +28,12 @@ function createProductCard (product, isCart) {
     return productCard;
 }
 
-function createProductImage (product) {
+function createProductImage ({ img: image, nome: name }) {
     const productImage = document.createElement('img');
 
-    productImage.src = product.img;
-    productImage.alt = `Imagem de ${product.nome}`;
+    productImage.src = image;
+    productImage.alt = `Imagem de ${name}`;
+    productImage.classList.add('product__image');
 
     return productImage;
 }
