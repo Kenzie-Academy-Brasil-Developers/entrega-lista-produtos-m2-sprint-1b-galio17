@@ -169,6 +169,10 @@ function createCartProducts(cartProductsData, classButtons) {
     else if(verifyClass(`${classButtons}--removeCart`)) removeProductFromCart(cartProductsData, product);
 }
 
+function addProductToCart(cartProductsData, { id, nome, preco, secao, img, promocao, precoPromocao }) {
+    cartProductsData.push({ id, nome, preco, secao, img, promocao, precoPromocao })
+}
+
 function callFunctions() {
     const cartProducts = [];
     
