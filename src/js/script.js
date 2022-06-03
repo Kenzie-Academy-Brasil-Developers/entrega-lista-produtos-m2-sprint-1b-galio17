@@ -179,6 +179,17 @@ function removeProductFromCart(cartProductsData, { id: idToRemove }) {
     cartProductsData.splice(productIndex, 1);
 }
 
+function loadCart(cartProductsData) {
+    const cartNoProducts = document.querySelector('.cartContainer__info__noProducts');
+    const cartInfo = document.querySelector('.cartContainer__info__productsInfo');
+
+    cartNoProducts.classList.toggle('close', cartProductsData.length);
+    cartInfo.classList.toggle('close', !cartProductsData.length);
+
+    createCartInfo(cartProductsData);
+    listProducts(cartProductsData, 'cartProductsContainer', true);
+}
+
 function callFunctions() {
     const cartProducts = [];
     
