@@ -93,6 +93,20 @@ function createProductElement (tag, innerText, ...className) {
     return productElement;
 }
 
+function createProductNutrients(nutrients) {
+    const productNutrients = document.createElement('ol');
+
+    productNutrients.classList.add('nutrientsContainer')
+
+    nutrients.forEach((nutrient) => {
+        const newNutrient = createProductElement('li', nutrient, 'nutrientsContainer__nutrient');
+
+        productNutrients.append(newNutrient);
+    })
+
+    return productNutrients;
+}
+
 function verifyClass(className) {
     return event.target.classList.contains(className);
 }
