@@ -169,6 +169,11 @@ function createCartProducts(cartProductsData, classButtons) {
     else if(verifyClass(`${classButtons}--removeCart`)) removeProductFromCart(cartProductsData, product);
 }
 
-listProducts(produtos);
-calculatePrice(produtos);
-addEventListener('click', runOnClick);
+function callFunctions() {
+    const cartProducts = [];
+    
+    listProducts(produtos, 'productContainer', false);
+    runOnClick(cartProducts);
+}
+
+callFunctions();
