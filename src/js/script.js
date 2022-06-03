@@ -1,12 +1,13 @@
-function listProducts (productsData) {
-    const productList = document.querySelector('ul');
+function listProducts (productsData, tagId, isCart) {
+    const productList = document.getElementById(tagId);
 
     productList.innerHTML = '';    
 
     productsData.forEach((product) => {
-        const newProduct = createProductCard(product);
+        const newProduct = createProductCard(product, isCart);
+        
         productList.append(newProduct);
-    });
+    }); 
 }
 
 function createProductCard (product) {
