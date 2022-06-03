@@ -123,24 +123,24 @@ function verifyClass(className) {
     return event.target.classList.contains(className);
 }
 
-function filterProducts () {
-    const currentFilter = document.querySelector('.curFilter');
+function filterProducts (classButtons) {
+    const classCurFilter = 'curFilter';
+    const currentFilter = document.querySelector(`.${classCurFilter}`);
     let filteredProducts = [];
 
-    if(currentFilter) currentFilter.classList.remove('curFilter');
+    if(currentFilter) currentFilter.classList.remove(classCurFilter);
 
-    if(verifyClass('estiloGeralBotoes--botaoBuscaPorNome')) filteredProducts = createSearchProducts();
+    if(verifyClass(`${classButtons}--search`)) filteredProducts = createSearchProducts();
     else {
-        event.target.classList.add('curFilter');
+        event.target.classList.add(classCurFilter);
 
-        if(verifyClass('estiloGeralBotoes--mostrarTodos')) filteredProducts = createSectionProducts('Todos');
-        else if(verifyClass('estiloGeralBotoes--filtrarHortifruti')) filteredProducts = createSectionProducts('Hortifruti');
-        else if(verifyClass('estiloGeralBotoes--filtrarPanificadora')) filteredProducts = createSectionProducts('Panificadora');
-        else if(verifyClass('estiloGeralBotoes--filtrarLaticionio')) filteredProducts = createSectionProducts('Laticínio');
+        if(verifyClass(`${classButtons}--showAll`)) filteredProducts = createSectionProducts('Todos');
+        else if(verifyClass(`${classButtons}--filterVegetable`)) filteredProducts = createSectionProducts('Hortifruti');
+        else if(verifyClass(`${classButtons}--filterBakery`)) filteredProducts = createSectionProducts('Panificadora');
+        else if(verifyClass(`${classButtons}--filterDairy`)) filteredProducts = createSectionProducts('Laticinio');
     }
 
-    listProducts(filteredProducts);
-    calculatePrice(filteredProducts);
+    listProducts(filteredProducts, 'productContainer', false);
 }
 
 function createSearchProducts () {
