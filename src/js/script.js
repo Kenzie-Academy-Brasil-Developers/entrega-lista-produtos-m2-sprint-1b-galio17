@@ -84,6 +84,13 @@ function createProductInfo(product, isCart) {
     return productInfo;
 }
 
+function createProductElement (tag, innerText, ...className) {
+    const productElement = document.createElement(tag);
+
+    productElement.classList.add(...className)
+    productElement.innerText = innerText;
+
+    return productElement;
 }
 
 function verifyClass(className) {
