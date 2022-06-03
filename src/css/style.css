@@ -11,7 +11,6 @@
 }
 
 body {
-    min-height: 100%;
     font: 400 14px var(--font-poppins);
 }
 
@@ -95,7 +94,7 @@ body {
     height: 310px;
     overflow-x: scroll;
     display: flex;
-    align-items: center;
+    align-items: stretch;
 }
 
 .product {
@@ -104,7 +103,7 @@ body {
     padding: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .product:hover {
@@ -220,7 +219,7 @@ body {
 .product--cart {
     border: none;
     margin: 5px auto;
-    padding: 0px;
+    padding: 3px;
     width: 100%;
     flex-direction: row;
 }
@@ -242,8 +241,9 @@ body {
     background-image: url(../img/trash.png);
     background-repeat: no-repeat;
     background-position: center center;
-    padding: initial;
+    margin: 4px;
     border-radius: 8px;
+    padding: initial;
     width: 30px;
     height: 25px;
     align-self: flex-start;
@@ -252,9 +252,9 @@ body {
 .cartContainer__info__noProducts {
     background-color: var(--grey-0);
     color: var(--grey-50);
-    margin-bottom: 5px;
+    margin: 0px auto;
     border-radius: 0px 0px 8px 8px;
-    width: 100%;
+    width: 90%;
     height: 200px;
     padding: 10px;
     display: flex;
