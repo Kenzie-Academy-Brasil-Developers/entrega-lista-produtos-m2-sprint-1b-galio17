@@ -309,6 +309,33 @@ body {
     }
 }
 
+@media screen and (min-width: 1025px) {
+    .filtersContainer {
+        display: flex;
+        margin: 25px auto 0px;
+        width: 90%;
+    }
+    
+    .filterSectionContainer {
+        width: 70%;
+        align-content: flex-start;
+    }
+
+    .buttons {
+        margin: 5px;
+    }
+
+    .filterSearchContainer {
+        min-width: 290px;
+        width: 28%;
+        max-width: 392px;
+    }
+
+    .buttons--search {
+        max-width: 59px;
+    }
+}
+
 .close {
     display: none;
 }
