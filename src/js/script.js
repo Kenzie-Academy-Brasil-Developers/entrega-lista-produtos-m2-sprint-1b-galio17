@@ -38,12 +38,25 @@ function createProductImage ({ img: image, nome: name }) {
     return productImage;
 }
 
-function createProductInfo (tag, innerText) {
-    const productInfo = document.createElement(tag);
+function createProductDetails(product, isCart) {
+    const productDetails = document.createElement('section');
+    const productInfo = createProductInfo(product, isCart);
+    const productButton = createProductElement('button', (product.promocao) ? 'Promoção' : 'Comprar', 'buttons', 'buttons--cart');
 
-    productInfo.innerText = innerText;
+    productDetails.classList.add('product__details');
+    productButton.classList.add(`buttons--addCart`);
+    
+    if(isCart) {
+        productDetails.classList.add('product__details--cart');
+        productButton.classList.remove(`buttons--addCart`);
+        productButton.classList.add(`buttons--removeCart`);
 
-    return productInfo;
+        productButton.innerText = '';
+    }
+
+    productDetails.append(productInfo, productButton);
+    
+    return productDetails;
 }
 
 function runOnClick (event) {
