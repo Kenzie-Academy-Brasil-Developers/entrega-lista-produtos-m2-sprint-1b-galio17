@@ -264,7 +264,25 @@ body {
     text-align: center;
 }
 
-@media screen and (min-width: 769px) {
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;               /* width of the entire scrollbar */
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+@media screen and (min-width: 769px) {    
+    .filterSectionContainer {
+        overflow: auto;
+    }
+
     .fieldSearch {
         width: 70%;
     }
@@ -285,6 +303,7 @@ body {
         width: 100%;
         height: 100%;
         flex-wrap: wrap;
+        overflow: auto;
     }
 
     .nutrientsContainer {
